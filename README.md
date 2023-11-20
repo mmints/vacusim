@@ -1,4 +1,4 @@
-# ROS 2 Dust
+# VacuSim
 
 This project includes a driver for a robot vacuum cleaner as well as a benchmarking tool, which makes it possible to gain first experiences in programming robots using ROS 2 Humble.
 The scenario is an apartment that is to be cleaned.
