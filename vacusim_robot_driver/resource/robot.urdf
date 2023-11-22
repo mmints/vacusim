@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<robot name="Custom_iRobot_Create">
+    <webots>
+
+        <plugin type="vacusim_robot_driver.vacusim_robot_driver.RobotDriver" />
+
+    </webots>
+</robot>
