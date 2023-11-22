@@ -1,0 +1,136 @@
+#VRML_SIM R2023a utf8
+
+# Modified by Mark O. Mints (mmints@uni-koblenz.de)
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/lights/protos/CeilingLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/lights/protos/FloorLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/bedroom/protos/Bed.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/chairs/protos/Chair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/living_room_furniture/protos/Armchair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "../protos/Custom_iRobot_Create.proto"
+
+WorldInfo {
+  info [
+    "Custom iRobot Roomba Simulation"
+  ]
+  title "Empty Apartment"
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 6.134769090732145e-05 6.134786438406729e-05 30.92908661359745
+  near 0.1
+}
+TexturedBackground {
+}
+CeilingLight {
+  translation 1.82639 -1.29685 2.4
+  pointLightColor 1 1 0.9372549019607843
+  pointLightIntensity 7
+}
+CeilingLight {
+  translation -3.25511 1.9443400000000004 2.4
+  name "ceiling light(2)"
+  pointLightIntensity 6
+}
+FloorLight {
+  translation -4.528276895458201 -4.2693419342918375 0
+  pointLightIntensity 2
+}
+Wall {
+  translation 5 0 0
+  size 0.3 10.3 2.4
+}
+Wall {
+  translation 0 5 0
+  rotation 0 0 1 1.5708
+  name "wall(2)"
+  size 0.3 9.7 2.4
+}
+Wall {
+  translation -5 0 0
+  name "wall(3)"
+  size 0.3 10.3 2.4
+}
+Wall {
+  translation 0 -5 0
+  rotation 0 0 1 1.5708
+  name "wall(4)"
+  size 0.3 9.7 2.4
+}
+Wall {
+  translation -1.5 2.675 0
+  name "wall(5)"
+  size 0.3 4.35 2.4
+}
+Bed {
+  translation 3.75 3.2800000002397445 0
+  rotation 0 0 1 3.1415
+}
+Table {
+  translation -3.28632 -3.86254 0
+}
+Chair {
+  translation -3.72164 -3.47751 0
+  rotation 0 0 -1 -0.11945530717958608
+}
+Table {
+  translation 2.2745 -0.476732 0
+  rotation 0 0 1 0.534482
+  name "table(2)"
+  size 0.8 1.2 0.53
+}
+Armchair {
+  translation 3.5894 0.323101 0
+  rotation 0 0 1 -2.5895153071795862
+}
+Robot {
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 7 7
+        }
+      }
+      geometry Plane {
+        size 10 10
+      }
+    }
+    Display {
+      translation 0 0 0.01
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/irobot/create/controllers/ground/dust.jpg"
+              ]
+            }
+            transparency 0.9
+            roughness 0.5
+            metalness 0
+          }
+          geometry Plane {
+            size 9.9 9.9
+          }
+        }
+      ]
+      name "ground_display"
+      width 512
+      height 512
+    }
+  ]
+  name "ground"
+  boundingObject Plane {
+    size 9.9 9.9
+  }
+  locked TRUE
+  controller "<none>"
+  supervisor TRUE
+}
+Custom_iRobot_Create {
+  translation -4 -0.5 0.044
+}

@@ -1,0 +1,35 @@
+#VRML_SIM R2023a utf8
+
+# Author: Mark O. Mints (mmints@uni-koblenz.de)
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "../protos/Custom_iRobot_Create.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position -6.67677772742087e-15 2.564815960345275e-14 6.897670809519313
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 3 3
+}
+WoodenBox {
+  translation 0.31 -0.67 0.3
+  rotation 0 0 1 0.785398
+}
+Custom_iRobot_Create {
+  hidden translation_1 -0.0062 -0.13589999999999972 -0.014
+  hidden rotation_1 0 1 0 0
+  hidden translation_2 -0.0062 0.13589999999999972 -0.014
+  hidden rotation_2 0 1 0 0
+  translation -1 0 0.0442056
+  rotation -1 0 0 0
+}
