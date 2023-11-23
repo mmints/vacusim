@@ -6,6 +6,8 @@ The driver provides interfaces to actuators and sensors of the robot.
 The benchmarking tool evaluates the cleaning process.
 The focus is on taking the best possible route through the apartment so that the largest possible area is covered and the floor is cleaned as well as possible.
 
+![robot](./.images/robot.png)
+
 
 This projects contains the ROS 2 package [`vacusim_robot_driver`](./vacusim_robot_driver/) which depends on the messages and services defined in [`vacusim_robot_interfaces`](./vacusim_robot_interfaces/).
 
@@ -57,6 +59,8 @@ Services:
 /turn
 ```
 
+![topics and services](./.images/relations.png)
+
 ## Run a Benchmark
 First, launch the robot driver:
 ```
@@ -95,3 +99,7 @@ There are two world containing the benchmarking ground controller:
 - [`simple_arena_launch.py`](./vacusim_robot_driver/launch/simple_arena_launch.py): Launches the simple arena world and the robot driver. There is no benchmarking ground controller
 - [`apartment_launch.py`](./vacusim_robot_driver/launch/apartment_launch.py): Launches the apartment world and the robot driver. There is no benchmarking ground controller
 - [`empty_apartment_launch.py`](./vacusim_robot_driver/launch/apartment_launch.py): Launches the empty apartment world and the robot driver. There is no benchmarking ground controller
+
+Simple Arena             |  Empty Apartment         |  Furnished Apartment 
+:-------------------------:|:-------------------------:|:-------------------------:
+![Simple Arena](./.images/simple-arena.png)  |  ![Empty Apartment](./.images/apartment-empty.png) | ![Furnished Apartment](./.images/apartment-furniture.png)
