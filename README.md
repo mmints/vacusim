@@ -61,6 +61,12 @@ Services:
 
 ![topics and services](./.images/relations.png)
 
+You can control the robot with the `teleop_twist_keyboard` witch publishes control commands to `/cmd_vel`:
+
+```
+ ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+```
+
 ## Run a Benchmark
 First, launch the robot driver:
 ```
