@@ -1,0 +1,118 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Marble.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5212286766898884 0.40700522132935707 0.7501116026344008 2.0818763503658806
+  position 2.1211543710864698 -7.5092715228773645 21.505052214575223
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Wall {
+  translation -7.375 0 0
+  name "wall01"
+  size 0.25 9.5 2.4
+  appearance DEF WALL_APPEARANCE Marble {
+  }
+}
+Wall {
+  translation 7.375 0 0
+  name "wall02"
+  size 0.25 9.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 0 -4.875 0
+  rotation 0 0 1 1.5708
+  name "wall03"
+  size 0.25 15 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 0 4.875 0
+  rotation 0 0 1 1.5708
+  name "wall04"
+  size 0.25 15 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -2.875 -3.25 0
+  rotation 0 0 1 3.141592653589793
+  name "wall05"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -2.875 3.25 0
+  rotation 0 0 1 3.141592653589793
+  name "wall06"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 1.625 3.25 0
+  rotation 0 0 1 3.141592653589793
+  name "wall07"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 1.625 -3.25 0
+  rotation 0 0 1 3.141592653589793
+  name "wall08"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -6.5 -1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall09"
+  size 0.25 1.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -6.5 1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall10"
+  size 0.25 1.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -2.75 1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall11"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -2.75 -1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall12"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 1 -1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall13"
+  size 0.25 1.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 1 1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall14"
+  size 0.25 1.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+Floor {
+  size 15 10
+}
