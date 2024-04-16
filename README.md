@@ -12,12 +12,9 @@ The focus is on taking the best possible route through the apartment so that the
 This projects contains the ROS 2 package [`vacusim_robot_driver`](./vacusim_robot_driver/) which depends on the messages and services defined in [`vacusim_robot_interfaces`](./vacusim_robot_interfaces/).
 
 ## Status
-This project is still in development. All code available on the main branch of this repository is tested with following versions of Webots and ROS 2:
+This project is still in development. This repository is tested with following versions of Webots and ROS 2:
 
-![Generic badge](https://img.shields.io/badge/Webots-2023a-green.svg)
-![Generic badge](https://img.shields.io/badge/Webots-2023b-yellow.svg)
-
-![Generic badge](https://img.shields.io/badge/ROS_2-Humble-green.svg)
+![Generic badge](https://img.shields.io/badge/Webots-2023b-g.svg) ![Generic badge](https://img.shields.io/badge/ROS_2-Humble-g.svg)
 
 ## Setup
 Following are the installation steps to get the package running with Webots.
@@ -60,6 +57,12 @@ Services:
 ```
 
 ![topics and services](./.images/relations.png)
+
+You can control the robot with the `teleop_twist_keyboard` witch publishes control commands to `/cmd_vel`:
+
+```
+ ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+```
 
 ## Run a Benchmark
 First, launch the robot driver:
