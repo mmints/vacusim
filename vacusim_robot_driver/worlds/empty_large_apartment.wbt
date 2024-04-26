@@ -1,21 +1,19 @@
 #VRML_SIM R2023b utf8
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Marble.proto"
 EXTERNPROTO "../protos/Custom_iRobot_Create.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/lights/protos/CeilingLight.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.5212286766898884 0.40700522132935707 0.7501116026344008 2.0818763503658806
-  position 2.1211543710864698 -7.5092715228773645 21.505052214575223
+  orientation -0.310090144494867 0.4867670791560895 0.8166406265530766 1.324953675944243
+  position -7.110188072848579 -16.229139795093346 16.033091953654935
 }
 TexturedBackground {
-}
-TexturedBackgroundLight {
 }
 Wall {
   translation -7.375 0 0
@@ -116,6 +114,36 @@ Wall {
 }
 Floor {
   size 15 10
+}
+CeilingLight {
+  translation -0.55 3.3 2.4
+  name "ceilinglight01"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation -0.55 -3.3 2.4
+  name "ceilinglight02"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation -5 -3.3 2.4
+  name "ceilinglight03"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation -5 3.3 2.4
+  name "ceilinglight04"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation 4.5 3 2.4
+  name "ceilinglight05"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation 4.5 -3 2.4
+  name "ceilinglight06"
+  pointLightIntensity 4
 }
 Custom_iRobot_Create {
 }
