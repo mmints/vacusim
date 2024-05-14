@@ -44,8 +44,8 @@
 // Evaluation
 #define EVALUATION_TIME 60.0 // Ten minutes
 
-#define MAP_WIDTH 768
 #define MAP_HEIGHT 512
+#define MAP_WIDTH 768
 
 void fillMap(int map[MAP_HEIGHT][MAP_WIDTH], const int i, const int j, const float radius)
 {
@@ -110,7 +110,7 @@ int main() {
 
     // Map for logging the driven route and to calculate the cleaned area
     // col, row 
-    int map[width][height];
+    int map[height][width];
     int dirty_elements = 0;
     int cleaned_elements = 0;
 
@@ -183,8 +183,8 @@ int main() {
   
     // Printing the map for verification
     for (int i = 0; i < 512; i++) {
-        for (int j = 0; j < 512; j++) {
-            fprintf(map_file, "%d ", map[i][j]); // MAP [768][512]
+        for (int j = 0; j < 768; j++) {
+            fprintf(map_file, "%d ", map[i][j]); // MAP [512][768]
         }
         fprintf(map_file, "\n");
     }
