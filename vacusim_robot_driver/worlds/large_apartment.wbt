@@ -42,8 +42,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.39947988690081077 0.5141224644480159 0.7590085055594661 1.5846557517188704
-  position -4.389075961933939 -15.965446050296238 24.246621872316002
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 1.8518378859379356 0.01338706885595331 55.10508080469653
 }
 TexturedBackground {
 }
@@ -321,4 +321,5 @@ StraightStairs {
   rightRail []
 }
 Custom_iRobot_Create {
+  translation 2 4.5 0.044
 }
