@@ -42,7 +42,7 @@
 #define GROUND_Y 9.9
 
 // Evaluation
-#define EVALUATION_TIME 60.0 // Ten minutes
+#define EVALUATION_TIME 600.0 // Ten minutes
 
 #define MAP_HEIGHT 512
 #define MAP_WIDTH 768
@@ -115,15 +115,29 @@ int main() {
     int cleaned_elements = 0;
 
     // Initialize Map
-    // TODO: Add Walls
     for (int i = 0; i < width; i++) {
         for (int j = 0; j < height; j++) {
-            // if ((i <= 14) || (j <= 14) || (i >= 498)|| (j >= 498) || (i >= 162 && i <= 195 && j <= 232)) {
-            //     map[j][i] = 0;
-            // } else {
+            if ((i <= 13) || (j <= 13) || (i >= 755)|| (j >= 499) // Outlines
+                || (i >= 230 && i <= 244 && j >= 346) || (i >= 230 && i <= 244 && j <= 180) // left wall
+                || (i >= 460 && i <= 474 && j >= 346) || (i >= 460 && i <= 474 && j <= 180) // right wall
+                || (j >= 166 && j <= 180 && i <= 474) // top wall
+                || (j >= 332 && j <= 346 && i <= 474) // bottom wall
+
+            ) {
+                // Doors
+                if (((j >= 166 && j <= 180 && i >= 90) && (j >= 166 && j <= 180 && i <= 180)) || ((j >= 166 && j <= 180 && i >= 307) && (j >= 166 && j <= 180 && i <= 410)) || ((j >= 332 && j <= 346 && i >= 90) && (j >= 332 && j <= 346 && i <= 180)) || ((j >= 332 && j <= 346 && i >= 307) && (j >= 332 && j <= 346 && i <= 410))) {
+                    map[j][i] = 128;
+                    dirty_elements++;            
+                }
+                else {
+                    map[j][i] = 0;
+
+                }
+            } 
+            else {
                 map[j][i] = 128;
                 dirty_elements++;
-            // }
+            }
         }
     }
 
@@ -153,15 +167,7 @@ int main() {
 
     // display the robot position
     wb_display_fill_oval(display, transform_x, transform_y, 7, 7);
-
-    // Robot Coordinates
-    // TODO: Scaling with map dimensions?
-    // TODO: Move this into the robot controller
-    // const double coord_x = 60 * (translation[X] + GROUND_X / 2) / GROUND_X;  // Factor in x dimension
-    // const double coord_y = 40 * (-translation[Y] + GROUND_Y / 2) / GROUND_Y; // Factor in y dimension
-    // printf("Current Robot Position: (%i,%i)\n", (int)round(coord_x), (int)round(coord_y));
-    // printf("Current Robot Position: (%f,%f)\n", coord_x, coord_y);
-    
+   
    fillMap(map, (int)round(transform_y), (int)round(transform_x), 7.0);
     cleaned_elements = countCleanElements(map);
     cleaning_progress = (float)cleaned_elements / (float)dirty_elements;
