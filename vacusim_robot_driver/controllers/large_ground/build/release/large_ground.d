@@ -1,4 +1,4 @@
-build/release/ground.o: ground.c \
+build/release/large_ground.o: large_ground.c \
  /home/ecvb/.ros/webotsR2023b/webots/include/controller/c/webots/display.h \
  /home/ecvb/.ros/webotsR2023b/webots/include/controller/c/webots/types.h \
  /home/ecvb/.ros/webotsR2023b/webots/include/controller/c/webots/robot.h \

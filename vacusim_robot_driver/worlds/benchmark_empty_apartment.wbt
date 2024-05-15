@@ -1,6 +1,4 @@
-#VRML_SIM R2023a utf8
-
-# Modified by Mark O. Mints (mmints@uni-koblenz.de)
+#VRML_SIM R2023b utf8
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/lights/protos/CeilingLight.proto"
@@ -16,7 +14,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
-  position 2.376909268771788e-06 2.3769159919648266e-06 34.102905391350944
+  position 1.7374139680844866e-05 1.737418881240103e-05 39.40672066511671
   near 0.1
 }
 TexturedBackground {
