@@ -23,11 +23,12 @@ WoodenBox {
   translation 0.31 -0.67 0.3
   rotation 0 0 1 0.785398
 }
-Custom_iRobot_Create {
+DEF CUSTOM_ROOMBA Custom_iRobot_Create {
   translation -1 0 0.0442056
   rotation -1 0 0 0
 }
 Robot {
   name "supervisor"
-  controller "supervisor_ros"
+  controller "supervisor"
+  supervisor TRUE
 }
