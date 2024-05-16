@@ -10,7 +10,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
-  position 1.1744724130230982e-05 1.1744757373598671e-05 11.051227536456762
+  position -1.0321938952886706e-05 -1.0321968140756364e-05 8.823079338617834
 }
 TexturedBackground {
 }
@@ -26,4 +26,8 @@ WoodenBox {
 Custom_iRobot_Create {
   translation -1 0 0.0442056
   rotation -1 0 0 0
+}
+Robot {
+  name "supervisor"
+  controller "supervisor_ros"
 }
