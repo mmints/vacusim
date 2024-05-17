@@ -57,7 +57,12 @@ After loading a world, you will have access to two topics of the type `Pose2D`:
 /pose/raw   # provides a metric pose with the coordinate system origin in the top left corner of the world.
 /pose/tile  # provides a grid pose with tiles of size 0.25x0.25 m and the coordinate system origin in the top left corner of the world.
 ```
-Both topics are useful for navigation tasks.
+Both topics are useful for navigation tasks. They consists of three fields:
+```sh
+float64 x       # x coordinate (0 is left)
+float64 y       # y coordinate (0 is top)
+float64 theta   # agular rotation in radian (0 is oriented to the right)
+```
 
 ## Launch the Driver
 After properly installing the packages the simulation can by started by launching the launch file `robot_driver`:
@@ -85,6 +90,19 @@ You can control the robot with the `teleop_twist_keyboard` witch publishes contr
 ```
  ros2 run teleop_twist_keyboard teleop_twist_keyboard 
 ```
+
+## Use a Map
+There are three types of simple numeric grid map available in [`maps`](./maps):
+- [`apartment-40x40.txt`](./maps/apartment-40x40.txt): 40 by 40 tiles grid map of the single room apartment
+- [`large-apartment-60x40.txt`](./maps/large-apartment-60x40.txt): 60 by 40 tiles grid map of the large apartment
+- [`large-apartment-zones-60x40.txt`](./maps/large-apartment-zones-60x40.txt): 60 by 40 tiles grid map of the large apartment with zones for each room, encoded by numbers from 1 to 7
+
+The script [`example-map-loader.py`](./maps/example-map-loader.py) shows how to load a map into a `numpy` array.
+
+Following are some graphics illustration of the maps:
+[`apartment-40x40.txt`](./maps/apartment-40x40.txt)            |  [`large-apartment-60x40.txt`](./maps/large-apartment-60x40.txt)        |  [`large-apartment-zones-60x40.txt`](./maps/large-apartment-zones-60x40.txt)
+:-------------------------:|:-------------------------:|:-------------------------:
+![Simple Arena](./.images/small-map.png)  |  ![Empty Apartment](./.images/large-map.png) | ![Furnished Apartment](./.images/zonen.png)
 
 ## Run a Benchmark
 First, launch the robot driver:
@@ -114,10 +132,14 @@ This package contains the [`vacusim_robot_driver`](./vacusim_robot_driver/vacusi
 - [`simple_arena.wbt`](./vacusim_robot_driver/worlds/simple_arena.wbt): A small and simple arena. There is no benchmarking ground controller in the world.
 - [`apartment.wbt`](./vacusim_robot_driver/worlds/apartment.wbt): A middle size world with furniture. There is no benchmarking ground controller in the world.
 - [`empty_apartment.wbt`](./vacusim_robot_driver/worlds/empty_apartment.wbt): A middle size world without furniture. There is no benchmarking ground controller in the world.
+- [`large_apartment.wbt`](./vacusim_robot_driver/worlds/large_apartment.wbt): A large size world with furniture. There is no benchmarking ground controller in the world.
+- [`empty_large_apartment.wbt.wbt`](./vacusim_robot_driver/worlds/empty_large_apartment.wbt): A middle size world without furniture. There is no benchmarking ground controller in the world.
 
 There are two world containing the benchmarking ground controller:
 - [`benchmark_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_apartment.wbt)
-- [`benchmark_empty_apartment.wbt`](./vacusim_robot_driver/worlds/empty_apartment.wbt)
+- [`benchmark_empty_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_empty_apartment.wbt)
+- [`benchmark_large_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_large_apartment.wbt)
+- [`benchmark_empty_large_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_empty_large_apartment.wbt)
 
 #### Launch file
 - [`robot_driver_launch.py`](./vacusim_robot_driver/launch/robot_driver_launch.py): Launches only robot driver node
@@ -126,3 +148,8 @@ There are two world containing the benchmarking ground controller:
 Simple Arena             |  Empty Apartment         |  Furnished Apartment 
 :-------------------------:|:-------------------------:|:-------------------------:
 ![Simple Arena](./.images/simple-arena.png)  |  ![Empty Apartment](./.images/apartment-empty.png) | ![Furnished Apartment](./.images/apartment-furniture.png)
+
+
+Empty Large Apartment           |  Furnished large Apartment          
+:-------------------------:|:-------------------------:
+![Simple Arena](./.images/empty-apartment.png)  |  ![Empty Apartment](./.images/full-apartment.png) 
