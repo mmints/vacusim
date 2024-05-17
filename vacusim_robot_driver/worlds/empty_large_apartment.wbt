@@ -11,7 +11,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
-  position 2.4274787466379326 0.4168065213269001 38.585145866853864
+  position -6.427468673554041e-15 6.427468673554041e-15 38.595660697538015
 }
 TexturedBackground {
 }
@@ -145,7 +145,7 @@ CeilingLight {
   name "ceilinglight06"
   pointLightIntensity 4
 }
-Custom_iRobot_Create {
+DEF CUSTOM_ROOMBA Custom_iRobot_Create {
   translation 2 4.5 0.044
 }
 DEF SUPERVISOR Robot {
