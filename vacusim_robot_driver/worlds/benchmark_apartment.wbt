@@ -1,6 +1,4 @@
-#VRML_SIM R2023a utf8
-
-# Modified by Mark O. Mints (mmints@uni-koblenz.de)
+#VRML_SIM R2023b utf8
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/lights/protos/CeilingLight.proto"
@@ -21,7 +19,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
-  position 7.971345763019753e-05 7.97136830410603e-05 37.42419480242633
+  position 9.440239656770938e-05 9.440266351492402e-05 42.61898187654311
   near 0.1
 }
 TexturedBackground {
@@ -133,4 +131,9 @@ Robot {
 }
 DEF CUSTOM_ROOMBA Custom_iRobot_Create {
   translation -4 -0.5 0.044
+}
+DEF SUPERVISOR Robot {
+  translation 40 40 0.25
+  controller "supervisor_ros"
+  supervisor TRUE
 }

@@ -1,0 +1,196 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Marble.proto"
+EXTERNPROTO "../protos/Custom_iRobot_Create.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/lights/protos/CeilingLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 2.4274798882604807 0.4168076629526771 38.98888408684026
+}
+TexturedBackground {
+}
+Wall {
+  translation -7.375 0 0
+  name "wall01"
+  size 0.25 9.5 2.4
+  appearance DEF WALL_APPEARANCE Marble {
+  }
+}
+Wall {
+  translation 7.375 0 0
+  name "wall02"
+  size 0.25 9.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 0 -4.875 0
+  rotation 0 0 1 1.5708
+  name "wall03"
+  size 0.25 15 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 0 4.875 0
+  rotation 0 0 1 1.5708
+  name "wall04"
+  size 0.25 15 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -2.875 -3.25 0
+  rotation 0 0 1 3.141592653589793
+  name "wall05"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -2.875 3.25 0
+  rotation 0 0 1 3.141592653589793
+  name "wall06"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 1.625 3.25 0
+  rotation 0 0 1 3.141592653589793
+  name "wall07"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 1.625 -3.25 0
+  rotation 0 0 1 3.141592653589793
+  name "wall08"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -6.5 -1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall09"
+  size 0.25 1.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -6.5 1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall10"
+  size 0.25 1.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -2.75 1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall11"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation -2.75 -1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall12"
+  size 0.25 3 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 1 -1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall13"
+  size 0.25 1.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+Wall {
+  translation 1 1.625 0
+  rotation 0 0 -1 -1.5707953071795862
+  name "wall14"
+  size 0.25 1.5 2.4
+  appearance USE WALL_APPEARANCE
+}
+CeilingLight {
+  translation -0.55 3.3 2.4
+  name "ceilinglight01"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation -0.55 -3.3 2.4
+  name "ceilinglight02"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation -5 -3.3 2.4
+  name "ceilinglight03"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation -5 3.3 2.4
+  name "ceilinglight04"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation 4.5 3 2.4
+  name "ceilinglight05"
+  pointLightIntensity 4
+}
+CeilingLight {
+  translation 4.5 -3 2.4
+  name "ceilinglight06"
+  pointLightIntensity 4
+}
+Robot {
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 10.5 7
+        }
+      }
+      geometry Plane {
+        size 15 10
+      }
+    }
+    Display {
+      translation 0 0 0.01
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/irobot/create/controllers/ground/dust.jpg"
+              ]
+            }
+            transparency 0.9
+            roughness 0.5
+            metalness 0
+          }
+          geometry Plane {
+            size 14.9 9.9
+          }
+        }
+      ]
+      name "large_ground_display"
+      width 768
+      height 512
+    }
+  ]
+  name "large_ground"
+  boundingObject Plane {
+    size 14.9 9.9
+  }
+  locked TRUE
+  controller "large_ground"
+  supervisor TRUE
+}
+DEF CUSTOM_ROOMBA Custom_iRobot_Create {
+  translation 2 4.5 0.044
+}
+DEF SUPERVISOR Robot {
+  translation 60 40 0.25
+  controller "supervisor_ros"
+  supervisor TRUE
+}
