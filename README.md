@@ -1,5 +1,10 @@
 # VacuSim - Robot Programming Training and Competition in a Simulated Vacuum Cleaning Scenario
 
+---
+
+Deutsches Readme: [![Generic badge](https://img.shields.io/badge/deutsch-blue.svg)](README-german.md)
+
+---
 This project includes a driver for a robot vacuum cleaner as well as a benchmarking tool, which makes it possible to gain first experiences in programming robots using ROS 2 Humble.
 The scenario is an apartment that is to be cleaned.
 The driver provides interfaces to actuators and sensors of the robot.

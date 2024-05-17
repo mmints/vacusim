@@ -1,5 +1,12 @@
 # VacuSim - Roboterprogrammierungstraining und Wettbewerb in einem simulierten Staubsaugerszenario
 
+
+---
+
+English Readme: [![Generic badge](https://img.shields.io/badge/english-blue.svg)](README.md)
+
+---
+
 Dieses Projekt beinhaltet einen Treiber für einen Roboterstaubsauger sowie ein Benchmarking-Tool, welches es ermöglicht, erste Erfahrungen in der Programmierung von Robotern mit ROS 2 Humble zu sammeln.
 Das Szenario ist eine Wohnung, die gereinigt werden soll.
 Der Treiber bietet Schnittstellen zu den Aktuatoren und Sensoren des Roboters.
