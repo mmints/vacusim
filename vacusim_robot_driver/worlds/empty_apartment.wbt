@@ -1,11 +1,9 @@
-#VRML_SIM R2023a utf8
+#VRML_SIM R2023b utf8
 
-# Modified by Mark O. Mints (mmints@uni-koblenz.de)
-
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/lights/protos/CeilingLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/apartment_structure/protos/Wall.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/lights/protos/CeilingLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
 EXTERNPROTO "../protos/Custom_iRobot_Create.proto"
 
 WorldInfo {
@@ -16,7 +14,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
-  position -1.5944870367147293e-05 -1.5944915453685935e-05 27.62335336704316
+  position 5.345658627396735e-06 5.3456737368451076e-06 42.90909973217495
   near 0.1
 }
 TexturedBackground {
@@ -33,74 +31,38 @@ CeilingLight {
 }
 Wall {
   translation 5 0 0
-  size 0.3 10.3 2.4
+  size 0.25 10.3 2.4
 }
 Wall {
   translation 0 5 0
   rotation 0 0 1 1.5708
   name "wall(2)"
-  size 0.3 9.7 2.4
+  size 0.25 10 2.4
 }
 Wall {
   translation -5 0 0
   name "wall(3)"
-  size 0.3 10.3 2.4
+  size 0.25 10 2.4
 }
 Wall {
   translation 0 -5 0
   rotation 0 0 1 1.5708
   name "wall(4)"
-  size 0.3 9.7 2.4
+  size 0.25 10 2.4
 }
 Wall {
-  translation -1.5 2.675 0
+  translation -1.5 2.8 0
   name "wall(5)"
-  size 0.3 4.35 2.4
+  size 0.25 4.35 2.4
 }
-Robot {
-  children [
-    Shape {
-      appearance Parquetry {
-        textureTransform TextureTransform {
-          scale 7 7
-        }
-      }
-      geometry Plane {
-        size 10 10
-      }
-    }
-    Display {
-      translation 0 0 0.01
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColorMap ImageTexture {
-              url [
-                "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/irobot/create/controllers/ground/dust.jpg"
-              ]
-            }
-            transparency 0.9
-            roughness 0.5
-            metalness 0
-          }
-          geometry Plane {
-            size 9.9 9.9
-          }
-        }
-      ]
-      name "ground_display"
-      width 512
-      height 512
-    }
-  ]
-  name "ground"
-  boundingObject Plane {
-    size 9.9 9.9
-  }
-  locked TRUE
-  controller "<none>"
-  supervisor TRUE
+Floor {
+  translation 0.128 0.128 0
 }
 DEF CUSTOM_ROOMBA Custom_iRobot_Create {
   translation -4 -0.5 0.044
+}
+DEF SUPERVISOR Robot {
+  translation 40 40 0.25
+  controller "supervisor_ros"
+  supervisor TRUE
 }

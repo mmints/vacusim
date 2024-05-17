@@ -1,6 +1,4 @@
-#VRML_SIM R2023a utf8
-
-# Author: Mark O. Mints (mmints@uni-koblenz.de)
+#VRML_SIM R2023b utf8
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
@@ -12,7 +10,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
-  position -6.67677772742087e-15 2.564815960345275e-14 6.897670809519313
+  position -2.3695237520304666e-08 -2.369530435178061e-08 12.465083949452708
 }
 TexturedBackground {
 }
@@ -25,11 +23,22 @@ WoodenBox {
   translation 0.31 -0.67 0.3
   rotation 0 0 1 0.785398
 }
-Custom_iRobot_Create {
-  hidden translation_1 -0.0062 -0.13589999999999972 -0.014
-  hidden rotation_1 0 1 0 0
-  hidden translation_2 -0.0062 0.13589999999999972 -0.014
-  hidden rotation_2 0 1 0 0
-  translation -1 0 0.0442056
-  rotation -1 0 0 0
+DEF CUSTOM_ROOMBA Custom_iRobot_Create {
+  hidden position_0_0 2.033191667554374e-06
+  hidden position_0_1 2.0331905072423262e-06
+  hidden rotation_1 0 1 0 2.0331213356031506e-06
+  hidden rotation_2 0 1 0 2.0331213356031506e-06
+  hidden translation_5 -4.357172400659692e-09 8.58127660043854e-14 -3.1360744134831253e-06
+  hidden rotation_5 0.8442481921910024 -0.37897508627296933 -0.37897608627276175 1.7393139999999316
+  hidden translation_6 -4.357171512481273e-09 8.586827715458268e-14 -3.136074413448431e-06
+  hidden rotation_6 -0.3025419867330869 0.6739659704451822 0.6739719704449735 -2.554029000000347
+  translation -1.0000627489702096 1.236453190848589e-09 0.044205274681426585
+  rotation -1.969698740977545e-05 -0.9999999998060142 -1.925921506476361e-08 0.0013948361377292707
+}
+DEF SUPERVISOR Robot {
+  translation 12 12 0.25
+  rotation 0 0 1 2.6786379256494364
+  name "supervisor"
+  controller "supervisor_ros"
+  supervisor TRUE
 }
