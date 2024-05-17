@@ -42,7 +42,7 @@
 #define GROUND_Y 9.9
 
 // Evaluation
-#define EVALUATION_TIME 600.0 // Ten minutes
+#define EVALUATION_TIME 1800.0 // thirty minutes
 
 #define MAP_HEIGHT 512
 #define MAP_WIDTH 768
