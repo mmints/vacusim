@@ -10,11 +10,15 @@ data_files.append(('share/ament_index/resource_index/packages', ['resource/' + p
 data_files.append(('share/' + package_name + '/launch', ['launch/simple_arena_launch.py']))
 data_files.append(('share/' + package_name + '/launch', ['launch/apartment_launch.py']))
 data_files.append(('share/' + package_name + '/launch', ['launch/empty_apartment_launch.py']))
+data_files.append(('share/' + package_name + '/launch', ['launch/large_apartment_launch.py']))
+data_files.append(('share/' + package_name + '/launch', ['launch/empty_large_apartment_launch.py']))
 data_files.append(('share/' + package_name + '/launch', ['launch/robot_driver_launch.py']))
 
 data_files.append(('share/' + package_name + '/worlds', ['worlds/simple_arena.wbt']))
 data_files.append(('share/' + package_name + '/worlds', ['worlds/apartment.wbt']))
 data_files.append(('share/' + package_name + '/worlds', ['worlds/empty_apartment.wbt']))
+data_files.append(('share/' + package_name + '/worlds', ['worlds/large_apartment.wbt']))
+data_files.append(('share/' + package_name + '/worlds', ['worlds/empty_large_apartment.wbt']))
 
 data_files.append(('share/' + package_name + '/controllers/ground', ['controllers/ground/dust.jpg']))
 data_files.append(('share/' + package_name + '/controllers/ground/', ['controllers/ground/build/release/ground']))
