@@ -135,11 +135,13 @@ This package contains the [`vacusim_robot_driver`](./vacusim_robot_driver/vacusi
 - [`large_apartment.wbt`](./vacusim_robot_driver/worlds/large_apartment.wbt): A large size world with furniture. There is no benchmarking ground controller in the world.
 - [`empty_large_apartment.wbt.wbt`](./vacusim_robot_driver/worlds/empty_large_apartment.wbt): A middle size world without furniture. There is no benchmarking ground controller in the world.
 
-There are two world containing the benchmarking ground controller:
-- [`benchmark_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_apartment.wbt)
-- [`benchmark_empty_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_empty_apartment.wbt)
-- [`benchmark_large_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_large_apartment.wbt)
-- [`benchmark_empty_large_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_empty_large_apartment.wbt)
+There are four world containing the benchmarking ground controller:
+- [`benchmark_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_apartment.wbt) (10 minutes benchmark)
+- [`benchmark_empty_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_empty_apartment.wbt) (10 minutes benchmark)
+- [`benchmark_large_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_large_apartment.wbt) (30 minutes benchmark)
+- [`benchmark_empty_large_apartment.wbt`](./vacusim_robot_driver/worlds/benchmark_empty_large_apartment.wbt) (30 minutes benchmark)
+
+You can speed up the benchmark time by accelerating the simulation in Webots by clicking on the `fast forward` button. 
 
 #### Launch file
 - [`robot_driver_launch.py`](./vacusim_robot_driver/launch/robot_driver_launch.py): Launches only robot driver node
