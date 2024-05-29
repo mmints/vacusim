@@ -35,10 +35,3 @@ DEF CUSTOM_ROOMBA Custom_iRobot_Create {
   translation -1.0000627489702096 1.236453190848589e-09 0.044205274681426585
   rotation -1.969698740977545e-05 -0.9999999998060142 -1.925921506476361e-08 0.0013948361377292707
 }
-DEF SUPERVISOR Robot {
-  translation 12 12 0.25
-  rotation 0 0 1 2.6786379256494364
-  name "supervisor"
-  controller "supervisor_ros"
-  supervisor TRUE
-}

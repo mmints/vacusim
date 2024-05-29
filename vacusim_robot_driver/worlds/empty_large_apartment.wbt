@@ -11,7 +11,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
-  position -6.427468673554041e-15 6.427468673554041e-15 38.595660697538015
+  position -3.75312759954069e-05 -3.753138211153493e-05 25.32261298374005
 }
 TexturedBackground {
 }
@@ -147,9 +147,4 @@ CeilingLight {
 }
 DEF CUSTOM_ROOMBA Custom_iRobot_Create {
   translation 2 4.5 0.044
-}
-DEF SUPERVISOR Robot {
-  translation 60 40 0.25
-  controller "supervisor_ros"
-  supervisor TRUE
 }

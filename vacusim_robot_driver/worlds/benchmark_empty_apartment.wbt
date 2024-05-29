@@ -102,8 +102,3 @@ Robot {
 DEF CUSTOM_ROOMBA Custom_iRobot_Create {
   translation -4 -0.5 0.044
 }
-DEF SUPERVISOR Robot {
-  translation 40 40 0.25
-  controller "supervisor_ros"
-  supervisor TRUE
-}
