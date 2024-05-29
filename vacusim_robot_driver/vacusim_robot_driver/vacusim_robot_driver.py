@@ -142,8 +142,8 @@ class RobotDriver():
             neg = 1.0
 
         # Set Speed to Hard Velocity
-        self.__left_motor.setVelocity(-neg * MAX_SPEED)
-        self.__right_motor.setVelocity(neg * MAX_SPEED)
+        self.__left_motor.setVelocity(-neg * QUATER_SPEED)
+        self.__right_motor.setVelocity(neg * QUATER_SPEED)
 
         # Set Breaking Point for Final Slow Down
         remaining_angle = abs(request.angle)
@@ -197,8 +197,8 @@ class RobotDriver():
             neg = 1.0
 
         # Drive with Fixed Speed
-        self.__left_motor.setVelocity(neg * MAX_SPEED)
-        self.__right_motor.setVelocity(neg * MAX_SPEED)
+        self.__left_motor.setVelocity(neg * HALF_SPEED)
+        self.__right_motor.setVelocity(neg * HALF_SPEED)
 
         # Set Breaking Point for Slow Down
         break_threshold = 0.005
@@ -209,7 +209,7 @@ class RobotDriver():
 
             # Calculate Driven Distance
             l = self.__position_sensor_left.getValue() - l_offset            
-            dl = 2 * l * WHEEL_RADIUS # distance covered by left wheel in meter
+            dl = l * WHEEL_RADIUS # distance covered by left wheel in meter
             
             # Slow Down Before Destination is Reached
             remaining_distance = abs(request.distance) - abs(dl)
