@@ -52,11 +52,11 @@ def main():
 
         tile_pose_msg.x = tile_cord_x
         tile_pose_msg.y = tile_cord_y
-        tile_pose_msg.theta = rotation[3]
+        tile_pose_msg.theta = rotation[3] * round(rotation[2])
 
         raw_pose_msg.x = raw_cord_x
         raw_pose_msg.y = raw_cord_y
-        raw_pose_msg.theta = rotation[3]
+        raw_pose_msg.theta = rotation[3] * round(rotation[2])
 
         tile_publisher.publish(tile_pose_msg)
         raw_publisher.publish(raw_pose_msg)
