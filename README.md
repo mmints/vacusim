@@ -72,7 +72,7 @@ float64 theta   # agular rotation in radian (0 is oriented to the right)
 ## Launch the Driver
 After properly installing the packages the simulation can by started by launching the launch file `robot_driver`:
 ```
-ros2 launch vacusim_robot_driver robot_driver.py
+ros2 launch vacusim_robot_driver robot_driver_launch.py 
 ``` 
 The robot driver node will start, waiting for a Webots instance to connect to. Following topics and services are provided:
 
