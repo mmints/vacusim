@@ -72,7 +72,7 @@ float64 theta   # Winkelrotation in Rad (0 ist nach rechts orientiert)
 ## Treiber starten
 Nach der ordnungsgemäßen Installation der Pakete kann die Simulation durch Starten der Startdatei `robot_driver` gestartet werden:
 ```
-ros2 launch vacusim_robot_driver robot_driver.py
+ros2 launch vacusim_robot_driver robot_driver_launch.py 
 ``` 
 Der Robotertreiber-Knoten wird gestartet und wartet darauf, dass eine Webots-Instanz verbunden wird. Folgende Themen und Dienste werden bereitgestellt:
 
