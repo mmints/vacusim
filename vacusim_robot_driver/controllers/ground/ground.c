@@ -83,7 +83,8 @@ int main() {
 
     fprintf(map_file, "P2\n512 512\n255\n");
 
-    FILE *input_map = fopen("apartment-25x25_scaled.txt", "r");
+    // FILE *input_map = fopen("apartment-25x25_scaled.txt", "r");
+    FILE *input_map = fopen("apartment-512x512.txt", "r");
 
     // Map for logging the driven route and to calculate the clead area
     // col, row 
@@ -107,6 +108,10 @@ int main() {
 
             if (value == 0) {
                 map[i][j] = 0;
+            } 
+            else if (value == 9) {
+                map[i][j] = 64;
+                dirty_elements++;
             } else {
                 map[i][j] = 128;
                 dirty_elements++;
