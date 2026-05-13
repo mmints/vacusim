@@ -162,8 +162,8 @@ class RobotDriver():
 
             if remaining_distance <= break_threshold:
                 factor = max(0.0001, abs(remaining_distance / break_threshold))
-                self.__left_motor.setVelocity(factor * (neg * QUATER_SPEED))
-                self.__right_motor.setVelocity(factor * (neg * QUATER_SPEED))
+                self.__left_motor.setVelocity(factor * (neg * MAX_SPEED))
+                self.__right_motor.setVelocity(factor * (neg * MAX_SPEED))
 
             if abs(dl) >= abs(request.distance):
                 break
