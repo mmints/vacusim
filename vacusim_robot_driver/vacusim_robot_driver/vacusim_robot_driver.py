@@ -70,7 +70,7 @@ class RobotDriver():
         )
 
         self.__bumper_left_publisher = self.__node.create_publisher(Bumper, 'bumper', 10)
-        self.__bumper_timer = self.__node.create_timer(0.05, self.__bumper_callback)
+        self.__bumper_timer = self.__node.create_timer(0.005, self.__bumper_callback)
 
         self.__distance_publisher = self.__node.create_publisher(Distance, 'distance', 5)
         self.__distance_timer = self.__node.create_timer(0.125, self.__distance_callback)
