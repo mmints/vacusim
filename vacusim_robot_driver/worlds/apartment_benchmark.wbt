@@ -3,7 +3,6 @@
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/lights/protos/CeilingLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
 EXTERNPROTO "../protos/Custom_iRobot_Create.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Table.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/chairs/protos/WoodenChair.proto"
@@ -21,6 +20,7 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/television/protos/Television.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/plants/protos/PottedTree.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/plants/protos/BunchOfSunFlowers.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/Parquetry.proto"
 
 WorldInfo {
   info [
@@ -29,8 +29,8 @@ WorldInfo {
   title "New Apartment 25x25"
 }
 Viewpoint {
-  orientation 0.5434231938441126 -0.43323317685094487 -0.7190272921578859 4.079799528891076
-  position 1.100747698913903 -4.962173515486613 22.665972475926367
+  orientation 0.3880657987301675 -0.19953976522965433 -0.899771536529141 3.9708992483364884
+  position 10.481619856240005 -11.930793603193802 16.824909986454482
   near 0.1
 }
 TexturedBackground {
@@ -143,9 +143,6 @@ Wall {
   name "wall(14)"
   size 0.25 0.25 1
 }
-Floor {
-  size 6.25 6.25
-}
 BunchOfSunFlowers {
   translation 1.23 -0.75 0
   rotation 0 0 1 -2.3561953071795863
@@ -203,4 +200,48 @@ Sink {
   translation 2.55 -2.71 0.85
   rotation 0 0 1 1.5708
   name "sink(1)"
+}
+Robot {
+  children [
+    Shape {
+      appearance Parquetry {
+        textureTransform TextureTransform {
+          scale 7 7
+        }
+      }
+      geometry Plane {
+        size 6.25 6.25
+      }
+    }
+    Display {
+      translation 0 0 0.01
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/irobot/create/controllers/ground/dust.jpg"
+              ]
+            }
+            transparency 0.9
+            roughness 0.5
+            metalness 0
+          }
+          geometry Plane {
+            size 6.25 6.25
+          }
+        }
+      ]
+      name "ground_display"
+      width 512
+      height 512
+    }
+  ]
+  name "ground"
+  boundingObject Plane {
+    size 6.25 6.25
+  }
+  locked TRUE
+  controller "ground"
+  supervisor TRUE
 }

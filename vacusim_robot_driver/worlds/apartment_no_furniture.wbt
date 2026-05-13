@@ -1,0 +1,118 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/lights/protos/CeilingLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/Custom_iRobot_Create.proto"
+
+WorldInfo {
+  info [
+    "Custom iRobot Roomba Simulation"
+  ]
+  title "New Apartment 25x25"
+}
+Viewpoint {
+  orientation -0.48213304422542236 0.42767720345274307 0.7646175104670098 1.9796393233339595
+  position 2.3017255389200697 -9.49119257987929 20.52475927035122
+  near 0.1
+}
+TexturedBackground {
+}
+CeilingLight {
+  translation 0.33639 0.21315 3.74
+  pointLightColor 1 1 0.9372549019607843
+  pointLightIntensity 7
+}
+Wall {
+  translation 3 0 0
+  size 0.25 6.25 1
+}
+Wall {
+  translation 1.5 0 0
+  name "wall(6)"
+  size 0.25 2.25 1
+}
+Wall {
+  translation 1.875 -0.5 0
+  name "wall(9)"
+  size 0.5 1.25 1
+}
+Wall {
+  translation 0 -1.375 0
+  name "wall(7)"
+  size 0.25 0.5 1
+}
+Wall {
+  translation -1.5 -1.375 0
+  name "wall(12)"
+  size 0.25 0.5 1
+}
+Wall {
+  translation 0 -2.625 0
+  name "wall(10)"
+  size 0.25 0.5 1
+}
+Wall {
+  translation -1.5 -2.625 0
+  name "wall(13)"
+  size 0.25 0.5 1
+}
+Wall {
+  translation -1.5 0 0
+  name "wall(8)"
+  size 0.25 2.25 1
+}
+Wall {
+  translation 6.68514e-06 3 0
+  rotation 0 0 1 1.5708
+  name "wall(2)"
+  size 0.25 6.25 1
+}
+Wall {
+  translation -3 0 0
+  name "wall(3)"
+  size 0.25 6.25 1
+}
+Wall {
+  translation 0 -3 0
+  rotation 0 0 1 1.5708
+  name "wall(4)"
+  size 0.25 6.25 1
+}
+Wall {
+  translation 0.625 1 0
+  rotation 0 0 1 1.5708
+  name "wall(1)"
+  size 0.25 5 1
+}
+Wall {
+  translation 0.620014 -1 0
+  rotation 0 0 1 1.5708
+  name "wall(5)"
+  size 0.25 2 1
+}
+Wall {
+  translation -1.24999 -1 0
+  rotation 0 0 1 1.5708
+  name "wall(11)"
+  size 0.25 0.25 1
+}
+Wall {
+  translation -2.74999 1 0
+  rotation 0 0 1 1.5708
+  name "wall(14)"
+  size 0.25 0.25 1
+}
+Floor {
+  size 6.25 6.25
+}
+DEF CUSTOM_ROOMBA Custom_iRobot_Create {
+  translation 1.87 0.62 0.0531073
+  rotation -1.97036644921743e-05 -0.9999999998058822 -3.2964148516977365e-08 0.0013951351068425856
+}
+DEF SUPERVISOR Robot {
+  translation 25 25 0.25
+  controller "supervisor_ros"
+  supervisor TRUE
+}

@@ -38,11 +38,11 @@
 #define Z 2
 
 // size of the ground
-#define GROUND_X 9.9
-#define GROUND_Y 9.9
+#define GROUND_X 6.25
+#define GROUND_Y 6.25
 
 // Evaluation
-#define EVALUATION_TIME 600.0 // Ten minutes
+#define EVALUATION_TIME 1800.0 // thirty minutes
 
 #define SIZE 512
 
@@ -80,7 +80,11 @@ int main() {
 
     FILE *map_file;
     map_file = fopen("result_map.pgm", "w");
+
     fprintf(map_file, "P2\n512 512\n255\n");
+
+    // FILE *input_map = fopen("apartment-25x25_scaled.txt", "r");
+    FILE *input_map = fopen("apartment-512x512.txt", "r");
 
     // Map for logging the driven route and to calculate the clead area
     // col, row 
@@ -88,16 +92,34 @@ int main() {
     int dirty_elements = 0;
     int cleaned_elements = 0;
 
+    if (input_map == NULL) {
+        printf("Error opening the input map file.\n");
+        return 1;
+    }
+
     for (int i = 0; i < 512; i++) {
         for (int j = 0; j < 512; j++) {
-            if ((i <= 14) || (j <= 14) || (i >= 498)|| (j >= 498) || (i >= 162 && i <= 195 && j <= 232)) {
-                map[j][i] = 0;
+            int value;
+            if (fscanf(input_map, "%d", &value) != 1) {
+                printf("Error reading the input map file.\n");
+                fclose(input_map);
+                return 1;
+            }
+
+            if (value == 0) {
+                map[i][j] = 0;
+            } 
+            else if (value == 9) {
+                map[i][j] = 64;
+                dirty_elements++;
             } else {
-                map[j][i] = 128;
+                map[i][j] = 128;
                 dirty_elements++;
             }
         }
     }
+
+    fclose(input_map);
 
     FILE *file;
        
