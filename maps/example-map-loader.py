@@ -1,7 +1,7 @@
 import numpy as np
 
 # Step 1: Read the map from a text file
-with open('apartment-40x40.txt', 'r') as file:
+with open('apartment-25x25-zones.txt', 'r') as file:
     lines = file.readlines()
 
 # Step 2: Convert the map into a NumPy array
