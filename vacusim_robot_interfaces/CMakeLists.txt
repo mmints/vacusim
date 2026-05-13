@@ -17,8 +17,12 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/Turn.srv"
   "srv/Drive.srv"
+  "srv/PlanPath.srv"
   "msg/Distance.msg"
   "msg/Bumper.msg"
+  "msg/Tile.msg"
+  "msg/Path.msg"
+  DEPENDENCIES geometry_msgs
 )
 
 if(BUILD_TESTING)
