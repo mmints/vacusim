@@ -42,7 +42,7 @@
 #define GROUND_Y 6.25
 
 // Evaluation
-#define EVALUATION_TIME 1800.0 // thirty minutes
+#define EVALUATION_TIME 3600.0 // sixty minutes // 1800.0 // thirty minutes
 
 #define SIZE 512
 
